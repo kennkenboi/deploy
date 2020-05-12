@@ -34,11 +34,12 @@ echo $'\n' "------ CONFIG SUCCESSFUL! ---------------------" $'\n'
 
 
 #Test the connection
-ssh -i /root/.ssh/id_rsa -q $DEPLOY_USER@$DEPLOY_HOST
+MSG=$(ssh -i /root/.ssh/id_rsa -q $DEPLOY_USER@$DEPLOY_HOST)
 if [ $? -eq 0 ]; then
 	echo $'\n' "------ CONNECTION SUCCESSFUL! -----------------------" $'\n'
 else
-	echo $'\n' "------ CONNECTION FAILED! -----------------------" $'\n'
+	echo $'\n' "------ CONNECTION FAILED! $HOST $USER -----------------------" $'\n'
+	echo MSG
 	exit 1
 fi
 

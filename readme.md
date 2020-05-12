@@ -22,7 +22,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   name: Deploy to Server
-                uses: kennkenboi/deploy@v1
+                uses: kennkenboi/deploy@v2
                 env:
                     DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
                     DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
