@@ -23,10 +23,8 @@ jobs:
         name: Build and Deploy
         runs-on: ubuntu-latest
         steps:
-            -   name: Checkout Repository
-                uses: actions/checkout@master
             -   name: Deploy to Server
-                uses: kennkenboi/deploy@master
+                uses: kennkenboi/deploy@v1
                 env:
                     DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
                     USER: ${{ secrets.USER }}
