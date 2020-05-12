@@ -2,9 +2,7 @@
 
 # Laravel Deploy
 
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://ngocquyhoang.com)
-[![forthebadge](https://forthebadge.com/images/badges/contains-cat-gifs.svg)](https://ngocquyhoang.com)
-[![forthebadge](https://forthebadge.com/images/badges/powered-by-water.svg)](https://ngocquyhoang.com)
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://twitter.com/kenboi_)
 
 </div>
 
@@ -27,7 +25,7 @@ jobs:
                 uses: kennkenboi/deploy@v1
                 env:
                     DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-                    USER: ${{ secrets.USER }}
-                    HOST: ${{ secrets.HOST }}
-                    PATH: ${{ secrets.PATH }}
+                    DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+                    DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+                    DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
 ```
