@@ -25,21 +25,11 @@ jobs:
         steps:
             -   name: Checkout Repository
                 uses: actions/checkout@master
-            -   name: Setup Enviroment
-                uses: shivammathur/setup-php@v2
-                with:
-                    php-version: '7.4'
-            -   name: Speed up the packages installation process
-                run: composer global require hirak/prestissimo
-            -   name: Install Packages
-                run: composer install --no-dev
             -   name: Deploy to Server
-                uses: ngocquyhoang/deploy@laravel
-                with:
-                    user: user
-                    host: host
-                    path: path
-                    owner: owner
+                uses: kennkenboi/deploy@master
                 env:
                     DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+                    USER: ${{ secrets.USER }}
+                    HOST: ${{ secrets.HOST }}
+                    PATH: ${{ secrets.PATH }}
 ```
