@@ -75,6 +75,14 @@ if [ $? -ne 0 ]; then
 fi
 echo $'\n' "------ CONFIG CACHE CLEARED AND UPDATED! -----------------------" $'\n'
 
+#routes cache
+ssh -i /root/.ssh/id_rsa -t $DEPLOY_USER@$DEPLOY_HOST "cd $DEPLOY_PATH && php artisan route:cache"
+if [ $? -ne 0 ]; then
+	echo $'\n' "------ ROUTES CACHE FAILED! -----------------------" $'\n'
+	exit 1
+fi
+echo $'\n' "------ ROUTES CACHE SUCCESS! -----------------------" $'\n'
+
 #run migrations
 ssh -i /root/.ssh/id_rsa -t $DEPLOY_USER@$DEPLOY_HOST "cd $DEPLOY_PATH && php artisan migrate"
 if [ $? -ne 0 ]; then
